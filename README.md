@@ -12,7 +12,7 @@ Financial institutions provide loan services to individuals and companies, they 
 
 ## 2. Methodology
 
-### Data Collection:
+#### Data Collection:
 - For this Project I have gathered dataset from Kaggle.
 - Dataset Source: [Kaggle - Loan Default Dataset](https://www.kaggle.com/datasets/nikhil1e9/loan-default/data)
 
@@ -68,7 +68,7 @@ After Re-Sampling:
 - Non-Defaulters: 114877
 - Defaulters: 108301
 
-### Model Building:
+#### Model Building:
 The data is randomly split into training and testing data into 80:20 ratio using the train_test_split() function from the scikit-learn library.
 
 The training data is then trained with help of following Machine learning Models:
@@ -104,4 +104,30 @@ The following evaluation metrics were used to compare how accurately was the dat
 - F1 Score:
   It gives a combined idea about Precision and Recall metrics. It is maximum when Precision is equal to Recall. It balances the trade-off between recall and precision.
 
+## 3. Conclusions and Findings
+
+- Though RandomForest, Xgboost and Ensemble models had very similar accuracy, Ensemble of randomForest and XGboost had the overall best performance in all the evaluation metrics.
+- Evaluation metrics of Ensemble of randomForest and XGboost:
+  - Accuracy: 0.8900439107446904
+  - Precision: 0.9134913984324937
+  - Recall: 0.8545999538851741
+  - F1_score: 0.883064900409797
+
+- Categorical Features like EmploymentType, HasCoSigner, and HasDependents have the most Impact on the target features.
+
+**Figure 7: Categorical features importance bar graph**
+
+- Numerical Features like LoanAmount and Income have the most Impact on the target features.
+
+**Figure 8: Numerical features importance bar graph**
+
+- For Future research try to gather balanced Data to avoid biased towards majority class, this dataset was very imbalanced.
+
+## 4. References
+
+1. [Kaggle - Loan Default Dataset](https://www.kaggle.com/datasets/nikhil1e9/loan-default/data)
+2. [SMOTEENN Documentation](https://imbalanced-learn.org/stable/references/generated/imblearn.combine.SMOTEENN.html)
+3. [RandomForestClassifier Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+4. [SVC Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
+5. [Metrics to Evaluate Classification Models](https://www.analyticsvidhya.com/blog/2021/07/metrics-to-evaluate-your-classification-model-to-take-the-right-decisions/)
 
